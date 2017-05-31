@@ -1,0 +1,27 @@
+<style>
+    md-toolbar {
+        box-shadow: 1px 0px 5px black;
+        display: flex;
+        background-color: #2196F3;
+        margin-bottom: 32px;
+    }
+    md-toolbar > * {
+        vertical-align: middle;
+        display: inline-block;
+        line-height: 64px;
+    }
+    md-toolbar > a:first-child {
+        margin-left: 24px;
+        font-size: 20px;
+        color: white;
+    }
+</style>
+<script>
+    (function() {
+        customElements.define('md-toolbar', class extends HTMLElement {
+            constructor() {
+                super();
+            }
+        });
+    })();
+</script>
