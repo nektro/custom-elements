@@ -1,0 +1,90 @@
+<style>
+    md-input-text {
+        display: block;
+        height: 50px;
+        margin: 12px 0px;
+        position: relative;
+    }
+    md-input-text > input {
+        margin-bottom: 16px;
+        width: 100%;
+        font-size: 18px;
+        border: none;
+        transition: 0.2s ease all;
+        outline: none;
+        border-bottom: 2px solid #aaa;
+    }
+    md-input-text > input:invalid:not([value=""]) {
+        border-bottom: 2px solid #f44336;
+    }
+    md-input-text > label {
+        font-size: 18px;
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 0px;
+        transition: 0.2s ease all;
+    }
+    md-input-text > input:focus,
+    md-input-text > input:valid {
+        border-bottom: 2px solid #3f51b5;
+    }
+    md-input-text > input:focus + label,
+    md-input-text > input:valid + label {
+        font-size: 14px;
+        top: -20px;
+        color: #3f51b5;
+    }
+    md-input-text > input:invalid:not([value=""]) + label {
+        font-size: 14px;
+        top: -20px;
+        color: #f44336;
+    }
+    md-input-text > input[required] + label::after {
+        content: " *";
+    }
+</style>
+<script>
+    (function () {
+        const thisScript = document.currentScript;
+        customElements.define('md-input-text', class extends HTMLElement {
+            constructor() {
+                super();
+                let inp = document.createElement('input');
+                inp.setAttribute('type', 'text');
+                inp.setAttribute('value', '');
+                this.appendChild(inp);
+                this.appendChild(document.createElement('label'));
+                this.children[1].addEventListener('keyup', function(e) {
+                    this.setAttribute('value', this.value);
+                });
+            }
+            static get observedAttributes() {
+                return ['type', 'name', 'label', 'required', 'placeholder'];
+            }
+            attributeChangedCallback(attr, oV, nV) {
+                switch (attr) {
+                    case 'name': {
+                        this.children[0].setAttribute('name', nV);
+                        this.children[1].setAttribute('for', nV);
+                        break;
+                    }
+                    case 'label': {
+                        this.children[1].innerHTML = nV;
+                        break;
+                    }
+                    case 'required':
+                    case 'placeholder': {
+                        this.children[0].setAttribute(attr, nV);
+                        break;
+                    }
+                    case 'type': {
+                        if (['text','password','email'].indexOf(nV) > -1)
+                            this.children[0].setAttribute(attr, nV);
+                        break;
+                    }
+                }
+            }
+        });
+    })();
+</script>
