@@ -1,0 +1,46 @@
+<!--
+    https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/buttons
+-->
+<style>
+    fl-button button {
+        display: inline-block;
+        border: 0;
+        background-color: #c2c2c2;
+        padding: 5px 32px;
+        cursor: pointer;
+        margin: 2px;
+        font-family: inherit;
+        font-weight: bold;
+        user-select: none;
+    }
+    fl-button button:focus {
+        outline: none;
+    }
+    fl-button button:hover {
+        margin: 0px;
+        border: 2px solid #7f7f7f;
+    }
+    fl-button button:active {
+        background-color: #7f7f7f;
+    }
+</style>
+<script>
+    (function() {
+        customElements.define('fl-button', class FLButtonElement extends HTMLElement {
+            constructor() {
+                super();
+                // must use inner <button> becuase extending HTMLButtonElement throws Illegal Constructor
+                // see https://bugs.chromium.org/p/chromium/issues/detail?id=648828
+                this.appendChild(document.createElement('button'));
+            }
+            static get observedAttributes() {
+                return ['content'];
+            }
+            attributeChangedCallback(attr, oV, nV) {
+                if (attr === 'content') {
+                    this.children[0].innerHTML = nV;
+                }
+            }
+        })
+    })();
+</script>
