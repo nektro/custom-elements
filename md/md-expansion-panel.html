@@ -13,14 +13,16 @@
         :host > input[type="checkbox"] {
             display: none;
         }
+        :host > label {
+            display: flex;
+        }
         :host > label > h4 {
-            display: inline-block;
+            flex-grow: 1;
             margin: 0px;
             padding: 24px;
             width: calc(100% - 48px - 54px);
         }
         :host > label > span {
-            float: right;
             padding-top: 24px;
             padding-right: 24px;
             user-select: none;
