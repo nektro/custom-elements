@@ -4,6 +4,9 @@
 applications. Using the Custom Elements in this package it is possible to use many of the UWP components
 in your web apps.
 
+📘 = link to Fluent Design documentation  
+🦑 = link to GitHub supplementary repository
+
 ## Elements (Coverage)
 
 ## Layout
