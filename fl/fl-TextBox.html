@@ -13,9 +13,9 @@
     fl-textbox input {
         display: block;
         height: 24px;
-        width: 100%;
+        width: calc(100% - 24px);
         border: 2px solid #cfcfcf;
-        padding-left: 10px;
+        padding: 0px 10px;
         font-size: 15px;
     }
     fl-textbox input[type="password"] {
@@ -43,7 +43,7 @@
                 this.children[0].setAttribute('type', 'text');
             }
             static get observedAttributes() {
-                return ['name','header','required','password','disabled'];
+                return ['name','header','required','type','disabled'];
             }
             attributeChangedCallback(attr, oV, nV) {
                 if (attr === 'name') {
@@ -51,10 +51,14 @@
                     this.children[1].setAttribute('id', `fltb-${nV}`);
                     this.children[0].setAttribute('for', `fltb-${nV}`);
                 }
+                if (attr === 'type') {
+                    if (['password','email'].indexOf(nV) > -1) {
+                        this.children[1].setAttribute(attr, nV);
+                    }
+                }
                 //
                 if (attr === 'header')   { this.children[0].innerHTML = nV;             }
                 if (attr === 'required') { this.children[1].setAttribute(attr, '');     }
-                if (attr === 'password') { this.children[1].setAttribute('type', attr); }
                 if (attr === 'disabled') { this.children[1].setAttribute(attr, '');     }
             }
         })
