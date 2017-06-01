@@ -1,0 +1,62 @@
+<!--
+    https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/text-box
+-->
+<style>
+    fl-textbox {
+        display: inline-block;
+        margin: 1em 0;
+    }
+    fl-textbox label {
+        position: relative;
+        top: -5px;
+    }
+    fl-textbox input {
+        display: block;
+        height: 24px;
+        width: 100%;
+        border: 2px solid #cfcfcf;
+        padding-left: 10px;
+        font-size: 15px;
+    }
+    fl-textbox input[type="password"] {
+        font-size: 30px;
+    }
+    fl-textbox input:hover {
+        border: 2px solid #7f7f7f;
+    }
+    fl-textbox input:focus {
+        outline: none;
+        border: 2px solid #0078cf;
+    }
+    fl-textbox input[disabled] {
+        border: 2px solid #cfcfcf;
+        background-color: #cfcfcf;
+    }
+</style>
+<script>
+    (function() {
+        customElements.define('fl-textbox', class FLTextBox extends HTMLElement {
+            constructor() {
+                super();
+                this.appendChild(document.createElement('label'));
+                this.appendChild(document.createElement('input'));
+                this.children[0].setAttribute('type', 'text');
+            }
+            static get observedAttributes() {
+                return ['name','header','required','password','disabled'];
+            }
+            attributeChangedCallback(attr, oV, nV) {
+                if (attr === 'name') {
+                    this.children[1].setAttribute('name', nV);
+                    this.children[1].setAttribute('id', `fltb-${nV}`);
+                    this.children[0].setAttribute('for', `fltb-${nV}`);
+                }
+                //
+                if (attr === 'header')   { this.children[0].innerHTML = nV;             }
+                if (attr === 'required') { this.children[1].setAttribute(attr, '');     }
+                if (attr === 'password') { this.children[1].setAttribute('type', attr); }
+                if (attr === 'disabled') { this.children[1].setAttribute(attr, '');     }
+            }
+        })
+    })();
+</script>
