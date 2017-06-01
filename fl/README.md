@@ -36,6 +36,7 @@ in your web apps.
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/hyperlinks) `<fl-hyperlink>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/images-imagebrushes) `<fl-image>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/style/segoe-ui-symbol-font) [🦑](https://github.com/Nektro/uwp-icons) `<fl-icon>`
+- [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/calendar-view) `<fl-calendarview>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/person-picture) `<fl-personpicture>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/progress-controls) `<fl-progressbar>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/progress-controls) `<fl-progressring>`
