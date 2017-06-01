@@ -3,9 +3,9 @@
 -->
 <style>
     md-input-text {
-        display: block;
+        display: inline-block;
         height: 50px;
-        margin: 12px 0px;
+        margin: 1em 0px;
         position: relative;
     }
     md-input-text > input {
@@ -45,6 +45,9 @@
     }
     md-input-text > input[required] + label::after {
         content: " *";
+    }
+    md-input-text:last-of-type {
+        margin-bottom: 0px;
     }
 </style>
 <script>
