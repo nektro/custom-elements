@@ -28,8 +28,8 @@ in your web apps.
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/rating) `<fl-ratingscontrol>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/search) `<fl-searchbox>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/slider) `<fl-slider>`
-- [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/text-box) `<fl-textbox>`
-- [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/password-box) `<fl-passwordbox>`
+- [x] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/text-box) `<fl-textbox>`
+- [x] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/password-box) `<fl-passwordbox>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/toggles) `<fl-toggleswitch>`
 
 ## Other
@@ -45,3 +45,8 @@ in your web apps.
 - [Default font](https://docs.microsoft.com/en-us/windows/uwp/style/typography) on `body` is set to [`Segoe UI`](https://www.microsoft.com/typography/fonts/family.aspx?FID=331)
 - `todo` Style the [Scroll Bar](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/scroll-controls) to Windows UWP style
 - `todo` Add [ToolTip](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/tooltips)s
+
+## Colors Cheatsheet
+- `#cfcfcf` - light gray
+- `#7f7f7f` - basic border
+- `#0078cf` - accent blue
