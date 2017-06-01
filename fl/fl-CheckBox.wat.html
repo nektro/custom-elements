@@ -64,17 +64,13 @@
                 return ['name', 'label'];
             }
             attributeChangedCallback(attr, oV, nV) {
-                switch (attr) {
-                    case 'name': {
-                        this.children[0].setAttribute('name', nV);
-                        this.children[0].setAttribute('id', `flcb-${name}`);
-                        this.children[1].setAttribute('for', `flcb-${name}`);
-                        break;
-                    }
-                    case 'label': {
-                        this.children[1].innerHTML = `<span>${nV}</span>`;
-                        break;
-                    }
+                if (attr === 'name') {
+                    this.children[0].setAttribute('name', nV);
+                    this.children[0].setAttribute('id', `flcb-${name}`);
+                    this.children[1].setAttribute('for', `flcb-${name}`);
+                }
+                if (attr === 'label') {
+                    this.children[1].innerHTML = `<span>${nV}</span>`;
                 }
             }
         });
