@@ -1,0 +1,54 @@
+<style>
+    fl-titlebar {
+        display: flex;
+        flex-direction: row;
+        height: 32px;
+        background-color: #FFB900;
+        color: white;
+    }
+    fl-titlebar span {
+        font-size: 16px;
+        line-height: 32px;
+        padding: 0px 10px;
+    }
+    fl-titlebar span:nth-child(2) {
+        flex-grow: 1;
+    }
+</style>
+<template id="template-fl-titlebar">
+    <span class="uwpi ChromeBack"></span>
+    <span>[[NAME]]</span>
+    <span class="uwpi ChromeMinimize"></span>
+    <span class="uwpi ChromeRestore"></span>
+    <span class="uwpi ChromeClose"></span>
+</template>
+<script>
+    (function() {
+        const thisScript = document.currentScript;
+        customElements.define('fl-titlebar', class FLTitleBar extends HTMLElement {
+            constructor() {
+                super();
+                this.appendChild(thisScript.ownerDocument.getElementById('template-fl-titlebar').content.cloneNode(true));
+                this.children[0].addEventListener('click', function() {
+                    window.history.back();
+                });
+            }
+            static get observedAttributes() {
+                return ['name','color'];
+            }
+            attributeChangedCallback(attr, oV, nV) {
+                if (attr === 'color') {
+                    this.style.backgroundColor = nV;
+                    let rgb = this.style.backgroundColor.substring(4).split("").reverse();
+                    rgb.shift();
+                    rgb = rgb.reverse().join("").split(", ").map(function(x) { return parseInt(x); });
+                    let o = Math.round(((parseInt(rgb[0]) * 299) + (parseInt(rgb[1]) * 587) + (parseInt(rgb[2]) * 114)) /1000);
+                    this.style.color = ((o > 125) ? ('black') : ('white'));
+                }
+                if (attr === 'name') {
+                    this.children[1].innerHTML = nV;
+                }
+            }
+        })
+    })();
+</script>
