@@ -1,0 +1,44 @@
+main {
+    &[file="/index"] {
+        margin: 10px;
+        
+        fl-icon {
+            font-size: 300%;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-weight: 300;
+            font-size: 250%;
+        }
+        div#cont {
+            margin: auto;
+            max-width: 1025px;
+
+            a {
+                display: inline-block;
+                border: 2px solid transparent;
+                padding: 40px 25px;
+                text-decoration: none;
+                min-width: 150px;
+                text-align: center;
+                vertical-align: top;
+                min-height: 135px;
+
+                &:hover {
+                    border: 2px solid #cfcfcf;
+                }
+                div {
+                    max-width: 150px;
+                    font-size: 14px;
+
+                    &:first-of-type {
+                        color: black;
+                    }
+                    &:last-of-type {
+                        color: #7f7f7f;
+                    }
+                }
+            }
+        }
+    }
+}
