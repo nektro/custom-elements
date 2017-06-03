@@ -6,21 +6,22 @@
         background-color: #FFB900;
         color: white;
     }
-    fl-titlebar span {
+    fl-titlebar span,
+    fl-titlebar fl-icon {
         font-size: 16px;
         line-height: 32px;
         padding: 0px 10px;
     }
-    fl-titlebar span:nth-child(2) {
+    fl-titlebar span {
         flex-grow: 1;
     }
 </style>
 <template id="template-fl-titlebar">
-    <span class="uwpi ChromeBack"></span>
+    <fl-icon icon="ChromeBack"></fl-icon>
     <span>[[NAME]]</span>
-    <span class="uwpi ChromeMinimize"></span>
-    <span class="uwpi ChromeRestore"></span>
-    <span class="uwpi ChromeClose"></span>
+    <fl-icon icon="ChromeMinimize"></fl-icon>
+    <fl-icon icon="ChromeRestore"></fl-icon>
+    <fl-icon icon="ChromeClose"></fl-icon>
 </template>
 <script>
     (function() {
