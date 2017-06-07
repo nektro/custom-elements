@@ -25,6 +25,12 @@
             constructor() {
                 super();
             }
+            static get observedAttributes() {
+                return ['color'];
+            }
+            attributeChangedCallback(attr, oV, nV) {
+                if (attr === 'color') this.style.backgroundColor = nV;
+            }
         });
     })();
 </script>
