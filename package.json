@@ -1,0 +1,8 @@
+{
+  "name": "custom-elements",
+  "version": "0.1",
+  "description": "A collection of v1 Custom Elements by Nektro",
+  "repository": "https://github.com/Nektro/custom-elements.git",
+  "author": "Nektro <nektromc@gmail.com>",
+  "license": "MIT"
+}
