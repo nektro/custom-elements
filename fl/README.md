@@ -5,13 +5,12 @@ applications. Using the Custom Elements in this package it is possible to use ma
 in your web apps.
 
 📘 = link to Fluent Design documentation  
-🦑 = link to GitHub supplementary repository
 
 ## Elements (Coverage)
 
 ## Layout
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/lists) `<fl-listview>`
-- [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/navigationview) `<fl-navigationview>`
+- [x] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/navigationview) `<fl-navigationview>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/split-view) `<fl-splitview>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/tabs-pivot) `<fl-pivot>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/tree-view) `<fl-treeview>`
@@ -31,11 +30,12 @@ in your web apps.
 - [x] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/text-box) `<fl-textbox>`
 - [x] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/password-box) `<fl-passwordbox>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/toggles) `<fl-toggleswitch>`
+- [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/lists#drop-down-lists) `<fl-combobox>`
 
 ## Other
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/hyperlinks) `<fl-hyperlink>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/images-imagebrushes) `<fl-image>`
-- [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/style/segoe-ui-symbol-font) [🦑](https://github.com/Nektro/uwp-icons) `<fl-icon>`
+- [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/style/segoe-ui-symbol-font) `<fl-icon>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/calendar-view) `<fl-calendarview>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/person-picture) `<fl-personpicture>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/progress-controls) `<fl-progressbar>`
@@ -51,3 +51,4 @@ in your web apps.
 - `#cfcfcf` - light gray
 - `#7f7f7f` - basic border
 - `#0078cf` - accent blue
+- `#afafaf` - dark gray

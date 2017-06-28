@@ -1,0 +1,89 @@
+<!--
+    https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/navigationview
+    use a list of radio buttons
+-->
+<style>
+    fl-navigationview {
+        display: inline-block;
+        width: 320px;
+        height: 100%;
+    }
+    fl-navigationview .title {
+        line-height: 48px;
+        margin-left: 10px;
+    }
+    /**/
+    fl-navigationview-li {
+        display: block;
+        height: 48px;
+        border-left: 5px solid transparent;
+    }
+    fl-navigationview-li fl-icon {
+        margin: 10px;
+        line-height: 28px;
+        margin-left: 5px;
+    }
+    fl-navigationview-li span {
+        line-height: 48px;
+    }
+    fl-navigationview-li:hover {
+        background-color: #dfdfdf;
+    }
+    fl-navigationview-li:active {
+        background-color: #afafaf;
+    }
+    fl-navigationview-li.active {
+        border-left: 5px solid #0078cf;
+    }
+    /**/
+    fl-contentpane {
+        display: none;
+        vertical-align: top;
+        margin: 15px;
+        max-width: calc(100% - 320px - 30px);
+    }
+    fl-contentpane > h1:first-child {
+        margin-top: 0px;
+    }
+    fl-contentpane.active {
+        display: inline-block;
+    }
+    fl-contentpane > section {
+        margin-bottom: 50px;
+    }
+</style>
+<script>
+    (function() {
+        const od = document.currentScript.ownerDocument;
+        customElements.define('fl-navigationview', class FLNavigationView extends HTMLElement {
+            constructor() {
+                super();
+                let a = this.querySelectorAll('nav fl-navigationview-li.active');
+                if (a.length === 0) this._select(0);
+            }
+            _select(n) {
+                let a = this.querySelector('nav fl-navigationview-li.active');
+                if (a !== null && Array.from(a.parentElement.children).indexOf(a) === n) return;
+                if (a !== null) a.classList.remove('active');
+                this.querySelectorAll('nav fl-navigationview-li')[n].classList.add('active');
+                //
+                let b = this.parentElement.querySelectorAll('fl-navigationview ~ fl-contentpane');
+                b.forEach((v,i) => { v.classList.remove('active'); });
+                if (b.length > n) b[n].classList.add('active');
+            }
+        });
+        customElements.define('fl-navigationview-li', class FLNavigationViewLI extends HTMLElement {
+            constructor() {
+                super();
+                this.addEventListener('click', (e) => {
+                    this.parentElement.parentElement._select(Array.from(this.parentElement.children).indexOf(this));
+                });
+            }
+        });
+        customElements.define('fl-contentpane', class FLContentPane extends HTMLElement {
+            constructor() {
+                super();
+            }
+        });
+    })();
+</script>
