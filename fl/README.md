@@ -38,8 +38,8 @@ in your web apps.
 - [x] [📘](https://docs.microsoft.com/en-us/windows/uwp/style/segoe-ui-symbol-font) `<fl-icon>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/calendar-view) `<fl-calendarview>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/person-picture) `<fl-personpicture>`
-- [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/progress-controls) `<fl-progressbar>`
-- [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/progress-controls) `<fl-progressring>`
+- [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/progress-controls#progressbar) `<fl-progressbar>`
+- [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/progress-controls#progressring) `<fl-progressring>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/progress-controls) `<fl-inprogressbar>`
 
 ## Notes
