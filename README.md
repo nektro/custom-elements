@@ -1,8 +1,8 @@
 # custom-elements
 A hub for some of my v1 Custom Elements, [MIT License](LICENSE)
 
-- `md/` - The [Material Design](https://material.io/guidelines/) by [Google](https://www.google.com/) collection
-- `fl/` - The [Fluent Design](http://fluent.microsoft.com/) by [Microsoft](https://www.microsoft.com/) collection
+- `md/` - The [Material Design](md/) by [Google](https://www.google.com/) collection
+- `fl/` - The [Fluent Design](fl/) by [Microsoft](https://www.microsoft.com/) collection
 
 Be sure to check out support for [Custom Elements v1](https://caniuse.com/#feat=custom-elementsv1)  
 As well as [Shadow DOM v1](https://caniuse.com/#feat=shadowdomv1)
