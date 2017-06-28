@@ -10,6 +10,8 @@
         display: inline-block;
         width: 320px;
         height: 100%;
+        position: sticky;
+        top: 0px;
     }
     fl-navigationview .title {
         line-height: 48px;
@@ -46,7 +48,11 @@
         max-width: calc(100% - 320px - 30px);
     }
     fl-contentpane > h1:first-child {
-        margin-top: 0px;
+        margin: 0px;
+        position: sticky;
+        top: 0px;
+        background-color: white;
+        padding-bottom: 0.33em;
     }
     fl-contentpane.active {
         display: inline-block;
