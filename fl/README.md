@@ -29,7 +29,7 @@ in your web apps.
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/slider) `<fl-slider>`
 - [x] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/text-box) `<fl-textbox>`
 - [x] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/password-box) `<fl-passwordbox>`
-- [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/toggles) `<fl-toggleswitch>`
+- [x] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/toggles) `<fl-toggleswitch>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/lists#drop-down-lists) `<fl-combobox>`
 
 ## Other

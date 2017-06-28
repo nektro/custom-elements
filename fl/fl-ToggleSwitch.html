@@ -1,0 +1,114 @@
+<!--
+    https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/toggles
+-->
+<style>
+    fl-toggleswitch {
+        display: block;
+        margin: 1em 0px;
+    }
+</style>
+<template id="template-fl-toggleswitch">
+    <style>
+        :host div {
+            display: block;
+            padding-bottom: 10px;
+        }
+        :host input {
+            display: none;
+        }
+        :host label {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+            padding: 2px;
+            width: 44px;
+            height: 20px;
+            background-color: black;
+            border-radius: 20px;
+            transition: background 0.4s;
+        }
+        :host label::before {
+            display: block;
+            position: fixed;
+            content: "";
+            width: 44px;
+            height: 20px;
+            background-color: white;
+            border-radius: 20px;
+            transition: background 0.4s;
+        }
+        :host label::after {
+            display: block;
+            position: absolute;
+            content: "";
+            height: 12px;
+            width: 12px;
+            top: 6px;
+            left: 7px;
+            background-color: black;
+            border-radius: 16px;
+            transition: margin 0.4s, background 0.4s;
+        }
+        :host input:checked ~ label,
+        :host input:checked ~ label::before {
+            background-color: #0078cf;
+        }
+        :host input:checked ~ label::after {
+            margin-left: 22px;
+            background-color: white;
+        }
+        :host input:not([disabled]) ~ label:active,
+        :host input:not([disabled]) ~ label:active::before {
+            background-color: black;
+        }
+        :host input:not([disabled]) ~ label:active::after {
+            background-color: white;
+        }
+        :host input[disabled] ~ label,
+        :host input[disabled] ~ label::after {
+            background-color: #afafaf;
+        }
+        :host input[disabled] ~ label::before {
+            background-color: white;
+        }
+        :host input[disabled] ~ div {
+            color: #afafaf;
+        }
+    </style>
+    <input type="checkbox" />
+    <div></div>
+    <label></label>
+</template>
+<script>
+    (function() {
+        const currentScript = document.currentScript;
+        customElements.define('fl-toggleswitch', class FLToggleSwitch extends HTMLElement {
+            constructor() {
+                super();
+                let shadow = this.attachShadow({mode:'open'});
+                shadow.appendChild(currentScript.ownerDocument.getElementById('template-fl-toggleswitch').content.cloneNode(true));
+            }
+            static get observedAttributes() {
+                return ['data-toggled','label','name','disabled','required'];
+            }
+            attributeChangedCallback(attr, oV, nV) {
+                if (attr === 'name') {
+                    this.shadowRoot.children[1].setAttribute('name', nV);
+                    this.shadowRoot.children[1].setAttribute('id', `flts-${nV}`);
+                    this.shadowRoot.children[3].setAttribute('for', `flts-${nV}`);
+                }
+                if (attr === 'label') {
+                    this.shadowRoot.children[2].innerHTML = nV;
+                }
+                if (attr === 'data-toggled') {
+                    if (nV === 'true') this.shadowRoot.children[1].setAttribute('checked', '');
+                    if (nV === 'false') this.shadowRoot.children[1].removeAttribute('checked');
+                }
+                if (['disabled','required'].indexOf(attr) > -1) {
+                    this.shadowRoot.children[1].setAttribute(attr, '');
+                }
+            }
+        });
+    })();
+</script>
