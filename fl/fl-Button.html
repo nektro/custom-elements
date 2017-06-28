@@ -1,37 +1,41 @@
 <!--
     https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/buttons
 -->
-<style>
-    fl-button button {
-        display: inline-block;
-        border: 0;
-        background-color: #cfcfcf;
-        padding: 5px 24px;
-        margin: 2px;
-        font-family: inherit;
-        user-select: none;
-        font-size: 18px;
-        letter-spacing: -1px;
-    }
-    fl-button button:focus {
-        outline: none;
-    }
-    fl-button button:hover {
-        margin: 0px;
-        border: 2px solid #7f7f7f;
-    }
-    fl-button button:active {
-        background-color: #7f7f7f;
-    }
-</style>
+<template id="template-fl-button">
+    <style>
+        :host button {
+            display: inline-block;
+            border: 0;
+            background-color: #cfcfcf;
+            padding: 5px 24px;
+            margin: 2px;
+            font-family: inherit;
+            user-select: none;
+            font-size: 18px;
+            letter-spacing: -1px;
+        }
+        :host button:focus {
+            outline: none;
+        }
+        :host button:hover {
+            margin: 0px;
+            border: 2px solid #7f7f7f;
+        }
+        :host button:active {
+            background-color: #7f7f7f;
+        }
+    </style>
+    <button>
+        <slot></slot>
+    </button>
+</template>
 <script>
     (function() {
+        const doc = document.currentScript.ownerDocument;
         customElements.define('fl-button', class FLButtonElement extends HTMLElement {
             constructor() {
                 super();
-                // must use inner <button> becuase extending HTMLButtonElement throws Illegal Constructor
-                // see https://bugs.chromium.org/p/chromium/issues/detail?id=648828
-                this.appendChild(document.createElement('button'));
+                this.attachShadow({mode:'open'}).appendChild(doc.getElementById('template-fl-button').content.cloneNode(true));
             }
             static get observedAttributes() {
                 return ['content'];
