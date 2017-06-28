@@ -1,0 +1,65 @@
+<!--
+    Copyright (c) 2017 Sean Denny
+-->
+<!--
+    https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/lists#drop-down-lists
+-->
+<style>
+    fl-combobox {
+        display: block;
+        margin: 1em 0px;
+    }
+</style>
+<template id="template-fl-combobox">
+    <style>
+        :host select {
+            min-width: 300px;
+            height: 30px;
+            border: 2px solid #999;
+            outline: none;
+            display: block;
+            margin-top: 10px;
+        }
+        :host select option {
+            background-color: #dadada;
+        }
+        :host select:disabled {
+            background-color: #dadada;
+            border: 2px solid #dadada;
+        }
+    </style>
+    <label></label>
+    <select>
+        <slot name="options"></slot>
+    </select>
+</template>
+<script>
+    (function() {
+        const doc = document.currentScript.ownerDocument;
+        customElements.define('fl-combobox', class FLComboBoxElement extends HTMLElement {
+            constructor() {
+                super();
+                let shadow = this.attachShadow({mode:'open'});
+                shadow.appendChild(doc.getElementById('template-fl-combobox').content.cloneNode(true));
+                // slot doesn't work in select
+                shadow.children[2].innerHTML += this.innerHTML;
+            }
+            static get observedAttributes() {
+                return ['name', 'label','disabled','required'];
+            }
+            attributeChangedCallback(attr, oV, nV) {
+                if (attr === 'name') {
+                    this.shadowRoot.children[2].setAttribute('name', nV);
+                    this.shadowRoot.children[2].setAttribute('id', `flcms-${nV}`);
+                    this.shadowRoot.children[1].setAttribute('for', `flms-${nV}`);
+                }
+                if (attr === 'label') {
+                    this.shadowRoot.children[1].innerHTML = `${nV}`;
+                }
+                if (['disabled','required'].includes(attr)) {
+                    this.shadowRoot.children[2].setAttribute(attr, '');
+                }
+            }
+        });
+    })();
+</script>

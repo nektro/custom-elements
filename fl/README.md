@@ -8,14 +8,14 @@ in your web apps.
 
 ## Elements (Coverage)
 
-## Layout
+### Layout
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/lists) `<fl-listview>`
 - [x] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/navigationview) `<fl-navigationview>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/split-view) `<fl-splitview>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/tabs-pivot) `<fl-pivot>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/tree-view) `<fl-treeview>`
 
-## Input
+### Input
 - [x] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/buttons) `<fl-button>`
 - [x] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/checkbox) `<fl-checkbox>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/color-picker) `<fl-colorpicker>`
@@ -30,9 +30,9 @@ in your web apps.
 - [x] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/text-box) `<fl-textbox>`
 - [x] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/password-box) `<fl-passwordbox>`
 - [x] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/toggles) `<fl-toggleswitch>`
-- [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/lists#drop-down-lists) `<fl-combobox>`
+- [x] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/lists#drop-down-lists) `<fl-combobox>`
 
-## Other
+### Other
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/hyperlinks) `<fl-hyperlink>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/images-imagebrushes) `<fl-image>`
 - [x] [📘](https://docs.microsoft.com/en-us/windows/uwp/style/segoe-ui-symbol-font) `<fl-icon>`
