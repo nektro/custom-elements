@@ -40,14 +40,6 @@
                 super();
                 this.attachShadow({mode:'open'}).appendChild(doc.getElementById('template-fl-button').content.cloneNode(true));
             }
-            static get observedAttributes() {
-                return ['content'];
-            }
-            attributeChangedCallback(attr, oV, nV) {
-                if (attr === 'content') {
-                    this.children[0].innerHTML = nV;
-                }
-            }
         })
     })();
 </script>
