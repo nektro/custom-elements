@@ -1,3 +1,10 @@
+<!--
+    Copyright (c) 2017
+    @author:        Sean Denny
+    @description:   Fluent Design Custom Elements by SD
+    @license:       MIT
+    @source:        https://github.com/Nektro/custom-elements/tree/master/fl
+-->
 # The Fluent Design Collection
 
 [Fluent Design](http://fluent.microsoft.com/) is the design guideline for Universal Windows Platform
