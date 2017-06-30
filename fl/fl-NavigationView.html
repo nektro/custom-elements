@@ -23,13 +23,16 @@
         height: 48px;
         border-left: 5px solid transparent;
     }
-    fl-navigationview-li fl-icon {
+    fl-navigationview-li fl-icon,
+    fl-navigationview-li span.material-icons,
+    fl-navigationview-li span:first-child {
         margin: 10px;
         line-height: 28px;
         margin-left: 5px;
     }
-    fl-navigationview-li span {
+    fl-navigationview-li span:last-child {
         line-height: 48px;
+        vertical-align: bottom;
     }
     fl-navigationview-li:hover {
         background-color: #dfdfdf;
