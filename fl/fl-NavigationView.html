@@ -67,6 +67,24 @@
     fl-contentpane > section {
         margin-bottom: 50px;
     }
+    /**/
+    @media (max-width: 1080px) {
+        fl-navigationview-li span:last-child {
+            display: none;
+        }
+        fl-navigationview-li > *:first-child {
+            font-size: 150%;
+        }
+        fl-navigationview {
+            width: 48px;
+        }
+        fl-navigationview .title {
+            display: none;
+        }
+        fl-contentpane {
+            max-width: calc(100% - 48px - 30px);
+        }
+    }
 </style>
 <script>
     (function() {
