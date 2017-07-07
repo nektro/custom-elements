@@ -17,19 +17,22 @@
 <template id="template-fl-combobox">
     <style>
         :host select {
-            min-width: 300px;
+            width: 100%;
             height: 30px;
-            border: 2px solid #999;
+            border: 2px solid #cfcfcf;
             outline: none;
             display: block;
             margin-top: 10px;
         }
-        :host select option {
-            background-color: #dadada;
+        :host select:hover {
+            border: 2px solid #7f7f7f;
         }
         :host select:disabled {
             background-color: #dadada;
             border: 2px solid #dadada;
+        }
+        :host select option {
+            background-color: #dadada;
         }
     </style>
     <label></label>
@@ -63,6 +66,12 @@
                 if (['disabled','required'].includes(attr)) {
                     this.shadowRoot.children[2].setAttribute(attr, '');
                 }
+            }
+            _addOption(v,t) {
+                this.shadowRoot.children[2].innerHTML += `<option value="${v}">${t}</option>`
+            }
+            get value() {
+                return this.shadowRoot.children[2].value;
             }
         });
     })();
