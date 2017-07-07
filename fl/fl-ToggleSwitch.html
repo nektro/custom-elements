@@ -76,8 +76,14 @@
         :host input[disabled] ~ label::after {
             background-color: #afafaf;
         }
-        :host input[disabled] ~ label::before {
-            background-color: white;
+        :host input[disabled]:checked ~ label {
+            background-color: #cfcfcf;
+        }
+        :host input[disabled]:checked ~ label::after {
+            background-color: #7f7f7f;
+        }
+        :host input[disabled]:checked ~ label::before {
+            background-color: #cfcfcf;
         }
         :host input[disabled] ~ div {
             color: #afafaf;
@@ -115,6 +121,9 @@
                 if (['disabled','required'].indexOf(attr) > -1) {
                     this.shadowRoot.children[1].setAttribute(attr, '');
                 }
+            }
+            get value() {
+                return this.shadowRoot.children[1].checked;
             }
         });
     })();
