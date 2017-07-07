@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Fluent Design Element Demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://rawgit.com/webcomponents/html-imports/b07d2b9/html-imports.min.js"></script>
+        <link rel="import" href="../fl.html">
+    </head>
+    <body>
+        <fl-titlebar name="Settings" color="#0078D7"></fl-titlebar>
+        <fl-navigationview>
+            <div class="title">A Title</div>
+            <nav>
+                <fl-navigationview-li>
+                    <fl-icon icon="Connect"></fl-icon>
+                    <span>Connect</span>
+                </fl-navigationview-li>
+            </nav>
+        </fl-navigationview>
+        <fl-contentpane>
+            <fl-checkbox name="check" label="This is a check box"></fl-checkbox>
+            <fl-textbox name="text" type="text" header="And this is a text box"></fl-textbox>
+            <fl-toggleswitch data-toggled="true" name="toggle" label="This is a toggle switch"></fl-toggleswitch>
+            <fl-toggleswitch data-toggled="true" name="toggle2" label="This toggle is disabled and on" disabled></fl-toggleswitch>
+            <fl-toggleswitch name="toggle3" label="This toggle is disabled and off" disabled></fl-toggleswitch>
+            <fl-button>I'm a button</fl-button>
+        </fl-contentpane>
+    </body>
+</html>
