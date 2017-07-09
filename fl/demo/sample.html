@@ -14,17 +14,36 @@
             <nav>
                 <fl-navigationview-li>
                     <fl-icon icon="Connect"></fl-icon>
-                    <span>Connect</span>
+                    <span>Overview</span>
+                </fl-navigationview-li>
+                <fl-navigationview-li>
+                    <fl-icon icon="Emoji"></fl-icon>
+                    <span>FL Icons</span>
                 </fl-navigationview-li>
             </nav>
         </fl-navigationview>
         <fl-contentpane>
-            <fl-checkbox name="check" label="This is a check box"></fl-checkbox>
-            <fl-textbox name="text" type="text" header="And this is a text box"></fl-textbox>
-            <fl-toggleswitch data-toggled="true" name="toggle" label="This is a toggle switch"></fl-toggleswitch>
-            <fl-toggleswitch data-toggled="true" name="toggle2" label="This toggle is disabled and on" disabled></fl-toggleswitch>
-            <fl-toggleswitch name="toggle3" label="This toggle is disabled and off" disabled></fl-toggleswitch>
-            <fl-button>I'm a button</fl-button>
+            <h1>Fluent Elements Overview</h1>
+            <section>
+                <h3>Input Elements</h3>
+                <fl-checkbox name="check" label="This is a check box"></fl-checkbox>
+                <fl-textbox name="text" type="text" header="And this is a text box"></fl-textbox>
+                <fl-toggleswitch data-toggled="true" name="toggle" label="This is a toggle switch"></fl-toggleswitch>
+                <fl-toggleswitch data-toggled="true" name="toggle2" label="This toggle is disabled and on" disabled></fl-toggleswitch>
+                <fl-toggleswitch name="toggle3" label="This toggle is disabled and off" disabled></fl-toggleswitch>
+                <p>Some Toggles</p>
+                <fl-radiobutton group="radio1" name="radio" label="Some Value" value="0"></fl-radiobutton>
+                <fl-radiobutton group="radio2" name="radio" label="Some Disabled Value" value="1" disabled=""></fl-radiobutton>
+                <fl-radiobutton group="radio3" name="radio" label="Another Value" value="2"></fl-radiobutton>
+                <fl-button>I'm a button</fl-button>
+            </section>
+        </fl-contentpane>
+        <fl-contentpane>
+            <h1>Fluent Icons</h1>
+            <section>
+                <h3>Via <code>&lt;fl-icon&gt;</code> (Uses <code>Segoe MDL2 Icons</code> font, only works on Windows 10 currently)</h3>
+                <p>A bunch of icons.</p>
+            </section>
         </fl-contentpane>
     </body>
 </html>
