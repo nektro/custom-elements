@@ -1,2 +1,309 @@
-h1 System
-a(href="#/") Back to the home page.
+fl-navigationview
+    div(class="title") System
+    nav
+        fl-navigationview-li
+            fl-icon(icon="TVMonitor")
+            span Display
+        fl-navigationview-li
+            fl-icon(icon="ActionCenter")
+            span Notifications &amp; actions
+        fl-navigationview-li
+            fl-icon(icon="PowerButton")
+            span Power &amp; sleep
+        fl-navigationview-li
+            fl-icon(icon="Battery0")
+            span Battery
+        fl-navigationview-li
+            fl-icon(icon="HardDrive")
+            span Storage
+        fl-navigationview-li
+            fl-icon(icon="TabletMode")
+            span Tablet mode
+        fl-navigationview-li
+            fl-icon(icon="Multitask16")
+            span Multitasking
+        fl-navigationview-li
+            fl-icon(icon="Project")
+            span Projecting to this PC
+        fl-navigationview-li
+            fl-icon(icon="HomeGroup")
+            span Shared experiences
+        fl-navigationview-li
+            fl-icon(icon="Info")
+            span About
+fl-contentpane
+    h1 Display
+    section
+        h3 Select and rearange the displays
+        p Select a display below to change its settings. Some settings are applied to all displays.
+        p [[Monitor Pick]]
+    section
+        h3 Brightness and color
+        fl-slider(min="0",max="100",value="40",label="Change brightness")
+        fl-toggleswitch(data-toggled="false",name="d-nl",label="Night Light")
+        a Night light settings
+    section
+        h3 Scale and layout
+        a Turn off custom scaling and logout
+        // temp br until fl-combobox is made
+        br
+        br
+        fl-combobox(disabled="",label="Change the size of text, apps, and other items")
+        a Custom scaling
+        fl-combobox(disabled="",label="Resolution")
+        fl-combobox(disabled="",label="Orientation")
+    section
+        h3 Multiple displays
+        fl-combobox(label="Multiple displays")
+            option(value="0") Duplicate these displays
+            option(value="1") Extend these displays
+            option(value="2") Show only on 1
+            option(value="3",selected="") Show only on 2
+        fl-checkbox(disabled="",name="d-md",label="Make this my main display")
+        a Connect to a wireless display
+        br
+        br
+        a Display adapter properties
+fl-contentpane
+    h1 Notifications &amp; actions
+    section
+        h3 Quick actions
+        p Press and hold (or select) quick actions, then drag to rearange them. These quick actions appear in action center.
+        p [[Quick Actions]]
+        a Add or remove quick actions
+        br
+        br
+    section
+        h3 Notifications
+        fl-toggleswitch(data-toggled="true",name="n-a",label="Get notifications from app and other senders")
+        fl-toggleswitch(data-toggled="true",name="n-b",label="Show notifications on the lock screen")
+        fl-toggleswitch(data-toggled="true",name="n-c",label="Show reminders and incoming VoIP calls on the lock screen")
+        fl-toggleswitch(data-toggled="false",name="n-d",label="Hide notifications when I'm duplicating my screen")
+        fl-toggleswitch(data-toggled="true",name="n-e",label="Get tips, tricks, and suggestions as you use Windows")
+        fl-toggleswitch(data-toggled="true",name="n-f",label="Show me the Windows welcome experience after updates and occasionally when I sign in to highlight what's new and suggested")
+    section
+        h3 Get notifications from these senders
+        p Select a sender to see more settings. Some senders might also have their own notification settings. If so, open the sender to change them.
+        p [[notification senders]]
+fl-contentpane
+    h1 Power &amp; sleep
+    section
+        h3 Screen
+        fl-combobox(label="On batter power, turn off after")
+            option(value="0") 1 minute
+            option(value="1") 2 minutes
+            option(value="2") 3 minutes
+            option(value="3") 5 minutes
+            option(value="4") 10 minutes
+            option(value="5") 15 minutes
+            option(value="6") 20 minutes
+            option(value="7") 25 minutes
+            option(value="8") 30 minutes
+            option(value="9") 45 minutes
+            option(value="10") 1 hour
+            option(value="11") 2 hours
+            option(value="12") 3 hours
+            option(value="13") 4 hours
+            option(value="14") 5 hours
+            option(value="15",selected="") Never
+        fl-combobox(label="When plugged in, turn off after")
+            option(value="0") 1 minute
+            option(value="1") 2 minutes
+            option(value="2") 3 minutes
+            option(value="3") 5 minutes
+            option(value="4") 10 minutes
+            option(value="5") 15 minutes
+            option(value="6") 20 minutes
+            option(value="7") 25 minutes
+            option(value="8") 30 minutes
+            option(value="9") 45 minutes
+            option(value="10") 1 hour
+            option(value="11") 2 hours
+            option(value="12") 3 hours
+            option(value="13") 4 hours
+            option(value="14") 5 hours
+            option(value="15",selected="") Never
+    section
+        h3 Sleep
+        fl-combobox(label="On batter power, PC goes to sleep after")
+            option(value="0") 1 minute
+            option(value="1") 2 minutes
+            option(value="2") 3 minutes
+            option(value="3") 5 minutes
+            option(value="4") 10 minutes
+            option(value="5") 15 minutes
+            option(value="6") 20 minutes
+            option(value="7") 25 minutes
+            option(value="8") 30 minutes
+            option(value="9") 45 minutes
+            option(value="10") 1 hour
+            option(value="11") 2 hours
+            option(value="12") 3 hours
+            option(value="13") 4 hours
+            option(value="14") 5 hours
+            option(value="15",selected="") Never
+        fl-combobox(label="When plugged in, PC goes to sleep after")
+            option(value="0") 1 minute
+            option(value="1") 2 minutes
+            option(value="2") 3 minutes
+            option(value="3") 5 minutes
+            option(value="4") 10 minutes
+            option(value="5") 15 minutes
+            option(value="6") 20 minutes
+            option(value="7") 25 minutes
+            option(value="8") 30 minutes
+            option(value="9") 45 minutes
+            option(value="10") 1 hour
+            option(value="11") 2 hours
+            option(value="12") 3 hours
+            option(value="13") 4 hours
+            option(value="14") 5 hours
+            option(value="15",selected="") Never
+    section
+        h3 Related settings
+        a Additional power settings
+fl-contentpane
+    h1 Battery
+    section
+        h3 Overview
+        div(style="font-size:300%") 34%
+        fl-progessbar(min="0",max="100",value="34")
+        a Battery usage by app
+    section
+        h3 Battery notifications
+        p Extend batter life by limiting background activity and push notifications when your device is low on battery
+        fl-checkbox(checked="",name="s-b-tobs",label="Turn on batter saver if my battery falls below:")
+        fl-slider(min="0",max="100",value="20",label="20%")
+        fl-toggleswitch(data-toggled="false",disabled="",name="b-a",label="Batter saver status until next charge")
+        fl-checkbox(checked="",name="s-b-lsb",label="Lower scrren brightness while in battery saver")
+    section
+        h3 More saving options
+        a Battery saving tips
+        fl-combobox(label="When watching movies and videos on battery power")
+            option(value="0") Optimize for battery life
+            option(value="1") Optimize for video quality
+fl-contentpane
+    h1 Storage
+    section
+        h3 Local storage
+        p [[drives status]]
+    section
+        h3 Storage sense
+        p Windows can automatically free up space by getting rid of files you don't need, like temporary files and content in your recycle bin
+        fl-toggleswitch(name="s-a",label="")
+        a Change how we free up space
+    section
+        h3 More storage settings
+        a Change where new content is saved
+        br
+        br
+        a Manage storage spaces
+fl-contentpane
+    h1 Tablet mode
+    section Tablet mode
+        fl-combobox(label="When I sign in")
+            option(value="0") Use table mode
+            option(value="1") Use desktop mode
+            option(value="2",selected="") Use the appropriate mode for my hardware
+        fl-combobox(label="When this device automatically switches tablet mode on or off")
+            option(value="0") Don't ask me and don't switch
+            option(value="1",selected="") Always ask me before switching
+            option(value="2") Don't ask me and always switch
+        fl-toggleswitch(data-toggled="true",name="tm-a",label="Hide app icons on the taskbar in tablet mode")
+        fl-toggleswitch(data-toggled="false",name="tm-b",label="Automatically hide the taskbar in tablet mode")
+fl-contentpane
+    h1 Multitasking
+    section
+        h3 Snap
+        fl-toggleswitch(data-toggled="true",name="m-a",label="Arrange window automatically by dragging them to the sides or corners of the screen")
+        fl-toggleswitch(data-toggled="true",name="m-b",label="When I snap a window, automatically size it to fill the available space")
+        fl-toggleswitch(data-toggled="true",name="m-c",label="When I snap a window, show what I can snap next to it")
+        fl-toggleswitch(data-toggled="true",name="m-d",label="When I resize a snapped window, simultaneously resize any adjacent snapped window")
+    section
+        h3 Virtual desktops
+        fl-combobox(label="On the taskbar, show windows that are open on")
+            option(value="0") All desktops
+            option(value="1",selected="") Only the desktop I'm using
+        fl-combobox(label="Pressing Alt+Tab shows windows that are open on")
+            option(value="0") All desktops
+            option(value="1",selected="") Only the desktop I'm using
+fl-contentpane
+    h1 Projecting to this PC
+    section
+        h3 Projecting to this PC
+        p Project your Windows phone or PC to this screen, and use its keyboard, mouse, and other devices, too.
+        fl-combobox(label="Windows PCs and phone can project to this PC when you say it's OK")
+            option(value="0") Available everywhere on secure networks
+            option(value="1") Available everywhere
+            option(value="2",selected="") Always Off
+        fl-combobox(label="Ask to project to this PC")
+            option(value="0") First time only
+            option(value="0",selected="") Every time a connection is requested
+        fl-toggleswitch(data-toggled="false",name="p-a",label="Require PIN for pairing")
+        fl-toggleswitch(data-toggled="true",name="p-b",label="This PC can be discovered for projection only when it is plugged in")
+        dl
+            dt PC name
+            dd DESKTOP-1GA7SD
+        a Rename your PC
+fl-contentpane
+    h1 Shared experiences
+    section
+        h3 Share across devices
+        fl-toggleswitch(data-toggled="true",name="s-a",label="Let me open apps on other devices, send messages between them, and invite others to use apps with me")
+        fl-combobox(label="I can share or recieve from")
+            option(value="0") Everyone nearby
+            option(value="1",selected="") My devices only
+        a Privacy Statement
+fl-contentpane
+    h1 About
+    section
+        img(src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Windows_10_Logo.svg/1024px-Windows_10_Logo.svg.png",height="96")
+        dl
+            dt Device name
+            dd DEKSTOP-1SJD6GA
+        fl-button Rename this PC
+        br
+        dl
+            dt Organization
+            dd WORKGROUP
+        a Connect to work or school
+        br
+        dl
+            dt Edition
+            dd Windows 10 Home Insider Preview
+            dt Version
+            dd 1703
+            dt OS Build
+            dd 16193.1001
+            dt Product ID
+            dd 6P99N-YF42M-TPGBG-9VMJP-YKHCF
+            dt Processor
+            dd Intel(R) Core(TM) i7-4980HQ CPU @ 2.80GHz
+            dt Installed RAM
+            dd 32.0 GB
+            dt System type
+            dd 64-bit operating system, x64-based processor
+            dt Pen and touch
+            dd No pen or touch input is available for this display
+        a Change product key or upgrade your edition of Windows
+        br
+        br
+        a Read the Privacy Statement for Windows and Microsoft services
+        br
+        br
+        a Read the Microsoft Services Agreement that applies to out services
+        br
+        br
+        a Read the Microsoft Software License Terms
+    section
+        h3 Related settings
+        a Additional administative tools
+        br
+        br
+        a BitLocker settings
+        br
+        br
+        a Device Manager
+        br
+        br
+        a System info

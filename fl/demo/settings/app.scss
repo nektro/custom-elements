@@ -1,3 +1,28 @@
+html, body {
+    height: 100%;
+}
+main {
+    height: calc(100% - 32px);
+}
+a {
+    color: #0078cf;
+    cursor: pointer;
+}
+fl-contentpane > section > * {
+    margin: 1em 0px;
+}
+dl {
+    display: grid;
+    grid-template-columns: 2;
+}
+dt {
+    grid-column: 1 / 2;
+    margin-bottom: 5px;
+}
+dd {
+    grid-column: 2 / 3;
+    color: #7f7f7f;
+}
 main {
     &[file="/index"] {
         margin: 10px;
