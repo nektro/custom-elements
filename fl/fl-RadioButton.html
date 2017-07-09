@@ -1,0 +1,89 @@
+<!--
+    Copyright (c) 2017
+    @author:        Sean Denny
+    @description:   Fluent Design Custom Elements by SD
+    @license:       MIT
+    @source:        https://github.com/Nektro/custom-elements/tree/master/fl
+-->
+<!--
+    https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/radio-button
+-->
+<style>
+    fl-radiobutton {
+        display: block;
+        margin: 1em 0px;
+    }
+    fl-radiobutton input[type="radio"] {
+        position: absolute;
+        visibility: hidden;
+    }
+    fl-radiobutton div {
+        width: 1em;
+        height: 1em;
+        border: 2px solid #7f7f7f;
+        border-radius: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    fl-radiobutton div::before {
+        content: ' ';
+        display: block;
+        border-radius: 100%;
+        width: 0.6em;
+        height: 0.6em;
+        position: relative;
+        top: 0.2em;
+        margin: auto;
+    }
+    fl-radiobutton input[type="radio"]:checked + div {
+        border: 2px solid #0078cf;
+    }
+    fl-radiobutton input[type="radio"]:checked + div::before {
+        background-color: #0078cf;
+    }
+    fl-radiobutton input[type="radio"][disabled] + div {
+        border: 2px solid #afafaf;
+    }
+    fl-radiobutton input[type="radio"][disabled] + div::before {
+        background-color: #afafaf;
+    }
+    fl-radiobutton label {
+        vertical-align: middle;
+    }
+</style>
+<template id="template-fl-radiobutton">
+    <span hidden=""><!-- filler element for when I built-ins are a thing and I can put the <style> in the shadow --></span>
+    <input type="radio" />
+    <div></div>
+    <label></label>
+</template>
+<script>
+    (function() {
+        const doc = window.document.currentScript.ownerDocument;
+        customElements.define('fl-radiobutton', class FLRadioButton extends HTMLElement {
+            constructor() {
+                super();
+                //let shadow = this.attachShadow({mode:'open'}); // built-ins aren't possible yet
+                this.appendChild(doc.getElementById('template-fl-radiobutton').content.cloneNode(true));
+            }
+            static get observedAttributes() {
+                return ['group','name','label','value','selected','required','disabled'];
+            }
+            attributeChangedCallback(attr, oV, nV) {
+                if (attr === 'group') {
+                    this.children[1].setAttribute('id', `flrb-${nV}`);
+                    this.children[3].setAttribute('for', `flrb-${nV}`);
+                }
+                if (attr === 'name') {
+                    this.children[1].setAttribute('name', `${nV}`);
+                }
+                if (attr === 'label') {
+                    this.children[3].innerHTML = `${nV}`;
+                }
+                if (['value','required','disabled'].includes(attr)) {
+                    this.children[1].setAttribute(attr, nV);
+                }
+            }
+        });
+    })();
+</script>

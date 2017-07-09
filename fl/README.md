@@ -30,7 +30,7 @@ in your web apps.
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/date-picker) `<fl-datepicker>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/time-picker) `<fl-timepicker>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/auto-suggest-box) `<fl-autosuggestbox`
-- [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/radio-button) `<fl-radiobutton>`
+- [x] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/radio-button) `<fl-radiobutton>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/rating) `<fl-ratingscontrol>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/search) `<fl-searchbox>`
 - [ ] [📘](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/slider) `<fl-slider>`
