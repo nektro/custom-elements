@@ -24,10 +24,15 @@
             margin: 0px;
             padding: 24px;
             width: calc(100% - 48px - 54px);
+            padding-left: 0px;
+            margin-left: 24px;
+        }
+        :host > input[type="checkbox"]:checked + label > h4 {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
         :host > label > span {
             padding-top: 24px;
-            padding-right: 24px;
+            margin-right: 24px;
             user-select: none;
         }
         :host > label > span {
@@ -35,6 +40,7 @@
         }
         :host > input[type="checkbox"]:checked + label span {
             transform: rotateX(180deg);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
         :host > div:last-child {
             max-height: 0px;
@@ -53,7 +59,7 @@
     <input type="checkbox" id="drop" />
     <label for="drop">
         <h4><slot name="title">NEED TITLE</slot></h4>
-        <span class="material-icons">
+        <span>
             <svg viewBox="0 0 24 12" width="24">
                 <path d="M 0 0 L 12 12 L 24 0 M 21 0 L 12 9 L 3 0" fill="black"></path>
             </svg>
