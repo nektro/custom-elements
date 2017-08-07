@@ -1,0 +1,26 @@
+custom-elements changelog
+key:
+    + added
+    ~ small update
+    - removed
+-------------------------
+0.2
+    FL
+        ~ CheckBox
+        + NavigationView
+        ~ Settings Demo
+        + UWP Icon
+        + ToggleSwitch
+        ~ Button
+        + ComboBox
+        ~ ContentPane
+        + Generic Demo
+        ~ TextBox
+        + RadioButton
+    Etc
+        + <p-sup>
+    MD
+        ~ ExpansionPanel
+0.1
+    Initial add of package.json
+    Added in commit 23ecbf2
